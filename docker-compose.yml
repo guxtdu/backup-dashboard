@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8080:8080"
+      - "9980:9980"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./.env:/app/.env
+    environment:
+      - TZ=Europe/Vienna
+    restart: unless-stopped
